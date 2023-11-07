@@ -8,6 +8,7 @@ package com.lab4.inventoryproject.inventoryproject;
  *
  * @author omara
  */
+//hI THERE
 public interface Record {
     String lineRepresentation();
     String getSearchKey();
