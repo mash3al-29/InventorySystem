@@ -15,12 +15,14 @@ class ProductDatabase extends Database{
     }
     
     @Override
-    public void insertRecord(Record record){
+    public boolean insertRecord(Record record){
         Record product = getRecord(record.getSearchKey());
         if(product != null){
-            super.deleteRecord(record.getSearchKey());
-        }
-        super.insertRecord(record);
+            return false;
+        }else{
+            super.insertRecord(record);
+            return true;
+        } 
     }
     
     @Override

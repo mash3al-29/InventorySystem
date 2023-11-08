@@ -14,14 +14,15 @@ import java.util.ArrayList;
 public class AdminRole implements Role{
     private EmployeeUserDatabase database;
     
-    AdminRole(){
+    public AdminRole(){
         this.database = new EmployeeUserDatabase();
     }
     
-    public void addEmployee(String employeeId, String name, String email, String address, String phoneNumber){
+    public boolean addEmployee(String employeeId, String name, String email, String address, String phoneNumber){
         EmployeeUser user = new EmployeeUser(employeeId,name, email, address, phoneNumber);
-        database.insertRecord(database.createRecordFrom(user.lineRepresentation()));
-        database.saveToFile();
+        boolean status = database.insertRecord(database.createRecordFrom(user.lineRepresentation()));
+        return status;
+        //database.saveToFile();
     }
     
     public Record[] getListOfEmployees(){
@@ -33,9 +34,10 @@ public class AdminRole implements Role{
         return employeeArray;
     }
     
-    public void removeEmployee(String key){
-        database.deleteRecord(key);
-        database.saveToFile();
+    public boolean removeEmployee(String key){
+        boolean status = database.deleteRecord(key);
+        return status;
+        //database.saveToFile();
     }
     
     @Override

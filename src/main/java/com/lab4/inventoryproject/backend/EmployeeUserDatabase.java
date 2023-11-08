@@ -14,13 +14,15 @@ public class EmployeeUserDatabase extends Database{
         super(FileNames.EMPLOYEE_FILENAME);
     }
     
-    
-    public void insertRecord(EmployeeUser record){
+    @Override
+    public boolean insertRecord(Record record){
         Record employee = getRecord(record.getSearchKey());
         if(employee != null){
-            super.deleteRecord(record.getSearchKey());
-        }
-        super.insertRecord(record);
+            return false;
+        }else{
+            super.insertRecord(record);
+            return true;
+        } 
     }
     
 

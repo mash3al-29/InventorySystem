@@ -16,15 +16,20 @@ public class EmployeeRole implements Role{
     private ProductDatabase productsDatabase;
     private CustomerProductDatabase customerProductDatabase;
     
-    EmployeeRole(){
+    public EmployeeRole(){
         this.productsDatabase = new ProductDatabase();
         this.customerProductDatabase = new CustomerProductDatabase();
     }
     
-    public void addProduct(String productID, String productName, String manufacturerName, String supplierName, int quantity,float price){
+    public boolean addProduct(String productID, String productName, String manufacturerName, String supplierName, int quantity,float price){
         Product product = new Product(productID,productName, manufacturerName, supplierName, quantity,price);
-        productsDatabase.insertRecord(product);
-        productsDatabase.saveToFile();
+        boolean status = productsDatabase.insertRecord(product);
+        if(status == false){
+            return false;
+        }else{
+            return true;
+        }
+        //productsDatabase.saveToFile();
     }
     
     public Record[] getListOfProducts(){
@@ -54,8 +59,8 @@ public class EmployeeRole implements Role{
                     product.setQuantity(product.getQuantity() - 1);
                     CustomerProduct customerProduct = new CustomerProduct(customerSSN,productID, purchaseDate);
                     customerProductDatabase.insertRecord(customerProduct);
-                    productsDatabase.saveToFile();
-                    customerProductDatabase.saveToFile();
+                    //productsDatabase.saveToFile();
+                    //customerProductDatabase.saveToFile();
                     return true;
                 }        
     }
@@ -82,8 +87,8 @@ public class EmployeeRole implements Role{
              product.setQuantity(product.getQuantity() + 1);
              customerProductDatabase.deleteRecord(customerSSN + ',' + productID + ','
                 + purchaseDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-             productsDatabase.saveToFile();
-             customerProductDatabase.saveToFile();
+             //productsDatabase.saveToFile();
+             //customerProductDatabase.saveToFile();
              return product.getPrice();
         }
         return -1;

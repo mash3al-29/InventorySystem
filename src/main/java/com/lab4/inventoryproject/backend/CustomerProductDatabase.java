@@ -17,12 +17,13 @@ class CustomerProductDatabase extends Database{
     }
     
     @Override
-    public void insertRecord(Record record){
+    public boolean insertRecord(Record record){
         Record customerProduct = getRecord(record.getSearchKey());
         if(customerProduct != null){
             super.deleteRecord(record.getSearchKey());
         }
         super.insertRecord(record);
+        return true;
     }
 
     @Override

@@ -71,14 +71,18 @@ public abstract class Database{
     }
     
 
-    public void insertRecord(Record record){
+    public boolean insertRecord(Record record){
         records.add(record);
+        return true;
     }
 
-    public void deleteRecord(String key){
+    public boolean deleteRecord(String key){
         Record record = getRecord(key);
         if (record != null) {
             records.remove(record);
+            return true;
+        }else{
+            return false;
         }
     }
     

@@ -11,6 +11,6 @@ package com.lab4.inventoryproject.constants;
 public interface FileNames {
  String PRODUCT_FILENAME = "Products.txt";
  String EMPLOYEE_FILENAME = "Employees.txt";
- String CUSTOMERPRODUCT_FILENAME = "CustomerProducts.txt";
+ String CUSTOMERPRODUCT_FILENAME = "CustomersProducts.txt";
 
 }
