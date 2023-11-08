@@ -34,6 +34,7 @@ public class RemoveEmployee extends javax.swing.JFrame {
         removeButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         removeLabel.setBackground(new java.awt.Color(102, 255, 102));
         removeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

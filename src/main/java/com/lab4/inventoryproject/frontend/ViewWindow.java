@@ -48,6 +48,7 @@ public class ViewWindow extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,6 +116,6 @@ public class ViewWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    protected javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
