@@ -159,6 +159,9 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
 
     private void returnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnProductActionPerformed
         System.out.println("Navigate to return product");
+        setVisible(false);
+        ProductReturn productReturn = new ProductReturn();
+        productReturn.setVisible(true);
     }//GEN-LAST:event_returnProductActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed

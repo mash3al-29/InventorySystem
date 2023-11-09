@@ -69,5 +69,7 @@ com\lab4\inventoryproject\frontend\ProductWindow$2.class
 com\lab4\inventoryproject\constants\FileNames.class
 com\lab4\inventoryproject\frontend\ProductWindow.class
 com\lab4\inventoryproject\frontend\AddEmployee$2.class
+com\lab4\inventoryproject\frontend\ProductReturn$1.class
 com\lab4\inventoryproject\frontend\AdminRoleMenu$2.class
 com\lab4\inventoryproject\frontend\LoginEmployee.class
+com\lab4\inventoryproject\frontend\ProductReturn.class
