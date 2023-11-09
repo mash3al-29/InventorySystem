@@ -17,7 +17,7 @@ public class ViewEmployees extends ViewWindow {
      */
     public ViewEmployees() {
         super(new String[]{"Employee ID", "Name", "Email", "Address", "Phone Number"});
-        convertRecordsToStrings(AdminRoleMenu.adminRole.getListOfEmployees());
+        convertRecordsToStrings(AdminRoleMenu.adminRole.getListOfEmployees(),5);
         setTitle("View Employees");
         initComponents();
     }

@@ -14,8 +14,8 @@ public class ViewProducts extends ViewWindow{
      * Creates new form ViewProducts
      */
     public ViewProducts() {
-        super(new String[]{"Product ID", "Product Name", "Manafacturer Name", "Supplier Name", "Quantity"});
-        convertRecordsToStrings(EmployeeRoleMenu.employeeRole.getListOfProducts());
+        super(new String[]{"Product ID", "Product Name", "Manafacturer Name", "Supplier Name", "Quantity","Price"});
+        convertRecordsToStrings(EmployeeRoleMenu.employeeRole.getListOfProducts(),6);
         setTitle("View Products");
         initComponents();
     }

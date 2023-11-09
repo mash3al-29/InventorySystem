@@ -20,13 +20,13 @@ public class ViewWindow extends javax.swing.JFrame {
         this.columnsNames = columnsNames;
     }
     
-    public String[][] convertRecordsToStrings(com.lab4.inventoryproject.backend.Record[] records) {
+    public String[][] convertRecordsToStrings(com.lab4.inventoryproject.backend.Record[] records,int Num) {
     String[] stringArray = new String[records.length];
 
     for (int i = 0; i < records.length; i++) {
         stringArray[i] = records[i].lineRepresentation();
     }
-    String[][] tableData = new String[stringArray.length][5];
+    String[][] tableData = new String[stringArray.length][Num];
     for(int x=0;x< stringArray.length;x++){
     tableData[x] = stringArray[x].split(",");
 }
