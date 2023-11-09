@@ -37,6 +37,7 @@ com\lab4\inventoryproject\frontend\AdminRoleMenu.class
 com\lab4\inventoryproject\frontend\LoginWindow.class
 com\lab4\inventoryproject\frontend\EmployeeRoleMenu$7.class
 com\lab4\inventoryproject\backend\InventoryProject.class
+com\lab4\inventoryproject\frontend\LoginEmployee$1.class
 com\lab4\inventoryproject\frontend\LoginWindow$2.class
 com\lab4\inventoryproject\backend\Database.class
 com\lab4\inventoryproject\frontend\ViewWindow.class
@@ -60,3 +61,4 @@ com\lab4\inventoryproject\frontend\EmployeeRoleMenu$5.class
 com\lab4\inventoryproject\constants\FileNames.class
 com\lab4\inventoryproject\frontend\AddEmployee$2.class
 com\lab4\inventoryproject\frontend\AdminRoleMenu$2.class
+com\lab4\inventoryproject\frontend\LoginEmployee.class

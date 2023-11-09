@@ -87,8 +87,8 @@ public class StartFrame extends javax.swing.JFrame implements Node{
     private void employeeRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeRoleActionPerformed
         System.out.println("Go to Login for Employees");
         setVisible(false);
-        EmployeeRoleMenu employeeRoleMenu = new EmployeeRoleMenu();
-        employeeRoleMenu.setVisible(true);
+        LoginEmployee employeeRoleLogin = new LoginEmployee();
+        employeeRoleLogin.setVisible(true);
         //employeeRoleMenu.setParentNode(this);
     }//GEN-LAST:event_employeeRoleActionPerformed
 
