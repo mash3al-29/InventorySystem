@@ -58,8 +58,7 @@ public class ProductReturn extends ProductWindow {
     protected void button1ActionPerformed(java.awt.event.ActionEvent evt)
     {
         super.button1ActionPerformed(evt);
-        LocalDate today = LocalDate.now();
-        double status = EmployeeRoleMenu.employeeRole.returnProduct(super.customerSSN, super.productID, super.purchaseDate, today);
+        double status = EmployeeRoleMenu.employeeRole.returnProduct(super.customerSSN, super.productID, super.purchaseDate, super.returnDate);
         if (status == -1)
         {
             JOptionPane.showMessageDialog(null, "An error occurred while attempting to return product");

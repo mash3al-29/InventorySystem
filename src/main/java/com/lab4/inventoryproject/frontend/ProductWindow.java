@@ -17,7 +17,9 @@ public class ProductWindow extends javax.swing.JFrame implements Node{
     protected String customerSSN;
     protected String productID;
     protected LocalDate purchaseDate;
+    protected LocalDate returnDate;
     private Node parent;
+    private boolean isReturn;
     
     /**
      * Creates new form ProductWindow
@@ -26,6 +28,17 @@ public class ProductWindow extends javax.swing.JFrame implements Node{
     public ProductWindow(String btnText) {
         initComponents();
         button1.setText(btnText);
+        setTitle(btnText);
+        if (btnText.equals("Purchase Product"))
+        {
+            label4.setVisible(false);
+            returnDateChooser.setVisible(false);
+            isReturn = false;
+        }
+        else
+        {
+            isReturn  =true;
+        }
     }
 
     /**
@@ -42,8 +55,10 @@ public class ProductWindow extends javax.swing.JFrame implements Node{
         label2 = new javax.swing.JLabel();
         ProductIDField = new javax.swing.JTextField();
         label3 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        purchaseDateChooser = new com.toedter.calendar.JDateChooser();
         button1 = new javax.swing.JButton();
+        label4 = new javax.swing.JLabel();
+        returnDateChooser = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -96,7 +111,7 @@ public class ProductWindow extends javax.swing.JFrame implements Node{
         label3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         label3.setOpaque(true);
 
-        jDateChooser1.setPreferredSize(new java.awt.Dimension(64, 22));
+        purchaseDateChooser.setPreferredSize(new java.awt.Dimension(64, 22));
 
         button1.setBackground(new java.awt.Color(0, 0, 0));
         button1.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,6 +121,14 @@ public class ProductWindow extends javax.swing.JFrame implements Node{
             }
         });
 
+        label4.setBackground(new java.awt.Color(102, 255, 102));
+        label4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label4.setText("Return Date");
+        label4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        label4.setOpaque(true);
+
+        returnDateChooser.setPreferredSize(new java.awt.Dimension(64, 22));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,17 +137,22 @@ public class ProductWindow extends javax.swing.JFrame implements Node{
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(customerSSNField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ProductIDField)))
+                        .addComponent(returnDateChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(purchaseDateChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(customerSSNField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ProductIDField))))
                 .addGap(18, 18, 18)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -144,8 +172,12 @@ public class ProductWindow extends javax.swing.JFrame implements Node{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(label3, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(97, Short.MAX_VALUE))
+                    .addComponent(purchaseDateChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(label4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(returnDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -171,12 +203,17 @@ public class ProductWindow extends javax.swing.JFrame implements Node{
         // TODO add your handling code here:
         customerSSN = customerSSNField.getText();
         productID = ProductIDField.getText();
-        Date input = jDateChooser1.getDate();
-        if (customerSSN == null || productID == null || input == null)
+        Date input1 = purchaseDateChooser.getDate();
+        Date input2 = returnDateChooser.getDate();
+        if (customerSSN == null || productID == null || input1 == null || (isReturn && input2 == null))
         {
              JOptionPane.showMessageDialog(null, "Some fields arew empty");
         }
-        purchaseDate = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        purchaseDate = input1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        if (isReturn)
+        { 
+        returnDate = input2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        }
     }//GEN-LAST:event_button1ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -224,10 +261,12 @@ public class ProductWindow extends javax.swing.JFrame implements Node{
     private javax.swing.JTextField ProductIDField;
     private javax.swing.JButton button1;
     private javax.swing.JTextField customerSSNField;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel label1;
     private javax.swing.JLabel label2;
     private javax.swing.JLabel label3;
+    private javax.swing.JLabel label4;
+    private com.toedter.calendar.JDateChooser purchaseDateChooser;
+    private com.toedter.calendar.JDateChooser returnDateChooser;
     // End of variables declaration//GEN-END:variables
 
     @Override
