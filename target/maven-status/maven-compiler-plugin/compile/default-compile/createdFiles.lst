@@ -1,5 +1,6 @@
 com\lab4\inventoryproject\frontend\EmployeeRoleMenu$2.class
 com\lab4\inventoryproject\frontend\LoginWindow$1.class
+com\lab4\inventoryproject\frontend\ProductReturn$2.class
 com\lab4\inventoryproject\frontend\AdminRoleMenu$5.class
 com\lab4\inventoryproject\backend\EmployeeRole.class
 com\lab4\inventoryproject\frontend\StartFrame$3.class
@@ -18,6 +19,7 @@ com\lab4\inventoryproject\backend\CustomerProduct.class
 com\lab4\inventoryproject\frontend\LoginAdmin.class
 com\lab4\inventoryproject\frontend\ProductPurchase.class
 com\lab4\inventoryproject\frontend\ProductWindow$3.class
+com\lab4\inventoryproject\frontend\ProductPurchase$2.class
 com\lab4\inventoryproject\frontend\EmployeeRoleMenu$6.class
 com\lab4\inventoryproject\frontend\ViewWindow$1.class
 com\lab4\inventoryproject\frontend\ViewEmployees$1.class
@@ -38,8 +40,10 @@ com\lab4\inventoryproject\backend\CustomerProductDatabase.class
 com\lab4\inventoryproject\backend\Record.class
 com\lab4\inventoryproject\frontend\ProductPurchase$1.class
 com\lab4\inventoryproject\frontend\AdminRoleMenu.class
+com\lab4\inventoryproject\frontend\ProductWindow$7.class
 com\lab4\inventoryproject\frontend\LoginWindow.class
 com\lab4\inventoryproject\frontend\EmployeeRoleMenu$7.class
+com\lab4\inventoryproject\frontend\RemoveEmployee$3.class
 com\lab4\inventoryproject\backend\InventoryProject.class
 com\lab4\inventoryproject\frontend\ProductWindow$4.class
 com\lab4\inventoryproject\frontend\LoginEmployee$1.class
@@ -57,7 +61,9 @@ com\lab4\inventoryproject\frontend\RemoveEmployee$1.class
 com\lab4\inventoryproject\frontend\AddEmployee.class
 com\lab4\inventoryproject\frontend\AddWindow$2.class
 com\lab4\inventoryproject\frontend\LoginWindow$3.class
+com\lab4\inventoryproject\frontend\LoginWindow$6.class
 com\lab4\inventoryproject\frontend\ViewProducts.class
+com\lab4\inventoryproject\frontend\AdminRoleMenu$6.class
 com\lab4\inventoryproject\frontend\RemoveEmployee.class
 com\lab4\inventoryproject\frontend\EmployeeRoleMenu$8.class
 com\lab4\inventoryproject\frontend\ViewWindow$2.class

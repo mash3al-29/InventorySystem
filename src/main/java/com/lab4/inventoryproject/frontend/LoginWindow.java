@@ -4,14 +4,16 @@
  */
 package com.lab4.inventoryproject.frontend;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author omara
  */
-public class LoginWindow extends javax.swing.JFrame {
+public class LoginWindow extends javax.swing.JFrame implements Node{
     protected String username;
     protected String password;
-
+    private Node parent;
     /**
      * Creates new form LoginWindow
      */
@@ -34,7 +36,12 @@ public class LoginWindow extends javax.swing.JFrame {
         passwordField = new javax.swing.JPasswordField();
         button1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         label1.setBackground(new java.awt.Color(102, 255, 102));
         label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -135,6 +142,12 @@ public class LoginWindow extends javax.swing.JFrame {
         password = String.valueOf(passwordField.getPassword());
     }//GEN-LAST:event_button1ActionPerformed
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        setVisible(false);
+        ((JFrame)this.getParentNode()).setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
+
     
     /**
      * @param args the command line arguments
@@ -177,4 +190,14 @@ public class LoginWindow extends javax.swing.JFrame {
     private javax.swing.JPasswordField passwordField;
     private javax.swing.JTextField usernameField;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void setParentNode(Node node) {
+        this.parent = node;
+    }
+
+    @Override
+    public Node getParentNode() {
+        return parent;
+    }
 }

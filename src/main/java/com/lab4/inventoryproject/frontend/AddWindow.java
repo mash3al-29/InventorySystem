@@ -13,7 +13,7 @@ import javax.swing.JTextField;
  *
  * @author Mashaal
  */
-public class AddWindow extends javax.swing.JFrame {
+public class AddWindow extends javax.swing.JFrame implements Node{
     private JButton button1 = new javax.swing.JButton();
     private JLabel label1 = new javax.swing.JLabel();
     private JLabel label2 = new javax.swing.JLabel();
@@ -30,6 +30,7 @@ public class AddWindow extends javax.swing.JFrame {
     protected String text3;
     protected String text4;
     protected String text5;
+    private Node parent;
     
 
     /**
@@ -237,6 +238,16 @@ public class AddWindow extends javax.swing.JFrame {
                 new AddWindow("Label1","Label2","Label3","Label4","Label5").setVisible(true);
             }
         });
+    }
+
+    @Override
+    public void setParentNode(Node node) {
+        this.parent = node;
+    }
+
+    @Override
+    public Node getParentNode() {
+        return parent;
     }
 
 }

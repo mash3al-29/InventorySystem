@@ -80,8 +80,7 @@ public class StartFrame extends javax.swing.JFrame implements Node{
         setVisible(false);
         LoginAdmin adminRoleLogin = new LoginAdmin();
         adminRoleLogin.setVisible(true);
-        //adminRoleMenu.setParentNode(this);
-       
+        adminRoleLogin.setParentNode(this);
     }//GEN-LAST:event_adminRoleActionPerformed
 
     private void employeeRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employeeRoleActionPerformed
@@ -89,7 +88,7 @@ public class StartFrame extends javax.swing.JFrame implements Node{
         setVisible(false);
         LoginEmployee employeeRoleLogin = new LoginEmployee();
         employeeRoleLogin.setVisible(true);
-        //employeeRoleMenu.setParentNode(this);
+        employeeRoleLogin.setParentNode(this);
     }//GEN-LAST:event_employeeRoleActionPerformed
 
     /**

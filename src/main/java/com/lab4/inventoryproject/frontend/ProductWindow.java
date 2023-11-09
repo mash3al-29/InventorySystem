@@ -6,16 +6,18 @@ package com.lab4.inventoryproject.frontend;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author omara
  */
-public class ProductWindow extends javax.swing.JFrame {
+public class ProductWindow extends javax.swing.JFrame implements Node{
     protected String customerSSN;
     protected String productID;
     protected LocalDate purchaseDate;
+    private Node parent;
     
     /**
      * Creates new form ProductWindow
@@ -43,7 +45,12 @@ public class ProductWindow extends javax.swing.JFrame {
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
         button1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         label1.setBackground(new java.awt.Color(102, 255, 102));
         label1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -93,7 +100,6 @@ public class ProductWindow extends javax.swing.JFrame {
 
         button1.setBackground(new java.awt.Color(0, 0, 0));
         button1.setForeground(new java.awt.Color(255, 255, 255));
-        button1.setActionCommand("");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
@@ -173,6 +179,12 @@ public class ProductWindow extends javax.swing.JFrame {
         purchaseDate = input.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     }//GEN-LAST:event_button1ActionPerformed
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        setVisible(false);
+        ((JFrame)getParentNode()).setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
+
     /**
      * @param args the command line arguments
      */
@@ -217,4 +229,14 @@ public class ProductWindow extends javax.swing.JFrame {
     private javax.swing.JLabel label2;
     private javax.swing.JLabel label3;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void setParentNode(Node node) {
+        this.parent = node;
+    }
+
+    @Override
+    public Node getParentNode() {
+        return parent;
+    }
 }

@@ -12,8 +12,10 @@ import javax.swing.JFrame;
  * @author Mashaal
  */
 public class AdminRoleMenu extends javax.swing.JFrame implements Node {
+
     protected static AdminRole adminRole = new AdminRole();
-    private Node parent = this;
+    private Node parent;
+
     /**
      * Creates new form AdminRole
      */
@@ -32,12 +34,17 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
 
         addEmployee = new javax.swing.JButton();
         viewEmployees = new javax.swing.JButton();
-        removeEmployee = new javax.swing.JButton();
+        removeButton = new javax.swing.JButton();
         logOut = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Admin Role");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         addEmployee.setBackground(new java.awt.Color(0, 0, 0));
         addEmployee.setForeground(new java.awt.Color(255, 255, 255));
@@ -57,12 +64,12 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
             }
         });
 
-        removeEmployee.setBackground(new java.awt.Color(0, 0, 0));
-        removeEmployee.setForeground(new java.awt.Color(255, 255, 255));
-        removeEmployee.setText("Remove Employee");
-        removeEmployee.addActionListener(new java.awt.event.ActionListener() {
+        removeButton.setBackground(new java.awt.Color(0, 0, 0));
+        removeButton.setForeground(new java.awt.Color(255, 255, 255));
+        removeButton.setText("Remove Employee");
+        removeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                removeEmployeeActionPerformed(evt);
+                removeButtonActionPerformed(evt);
             }
         });
 
@@ -84,7 +91,7 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(viewEmployees, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(logOut, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(removeEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(removeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(addEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -98,7 +105,7 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
                 .addGap(18, 18, 18)
                 .addComponent(viewEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(removeEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(removeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(logOut, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(35, Short.MAX_VALUE))
@@ -118,6 +125,8 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
     private void logOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutActionPerformed
         System.out.println("Navigate to Previous Window (Admin Role and Employee Role first window)");
         adminRole.logout();
+        setVisible(false);
+        ((JFrame)getParentNode()).setVisible(true);
     }//GEN-LAST:event_logOutActionPerformed
 
     private void viewEmployeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEmployeesActionPerformed
@@ -127,12 +136,20 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
         viewEmployees.setVisible(true);
     }//GEN-LAST:event_viewEmployeesActionPerformed
 
-    private void removeEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeEmployeeActionPerformed
+    private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
         System.out.println("Navigate to Remove Window");
         setVisible(false);
         RemoveEmployee removeEmployee = new RemoveEmployee();
         removeEmployee.setVisible(true);
-    }//GEN-LAST:event_removeEmployeeActionPerformed
+        removeEmployee.setParentNode(this);
+                
+    }//GEN-LAST:event_removeButtonActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        setVisible(false);
+        ((JFrame) getParentNode()).setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -172,17 +189,17 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addEmployee;
     private javax.swing.JButton logOut;
-    private javax.swing.JButton removeEmployee;
+    private javax.swing.JButton removeButton;
     private javax.swing.JButton viewEmployees;
     // End of variables declaration//GEN-END:variables
 
     @Override
     public void setParentNode(Node node) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        this.parent = node;
     }
 
     @Override
     public Node getParentNode() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return parent;
     }
 }

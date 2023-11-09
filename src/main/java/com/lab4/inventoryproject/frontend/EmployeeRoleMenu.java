@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  */
 public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
     protected static EmployeeRole employeeRole = new EmployeeRole();
-    private Node parent = this;
+    private Node parent;
     /**
      * Creates new form EmployeeRoleMenu
      */
@@ -33,7 +33,7 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
         returnProduct = new javax.swing.JButton();
         logout = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -134,7 +134,7 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
         System.out.println("Navigate to add product window");
         setVisible(false);
         AddProduct addProduct = new AddProduct();
-        addProduct.setParentNode(this.parent);
+        addProduct.setParentNode(this);
         addProduct.setVisible(true);
 //        AddProduct();
     }//GEN-LAST:event_addProductActionPerformed
@@ -151,6 +151,7 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
         setVisible(false);
         ProductPurchase productPurchase = new ProductPurchase();
         productPurchase.setVisible(true);
+        productPurchase.setParentNode(this);
     }//GEN-LAST:event_purchaseProductActionPerformed
 
     private void viewPurchasedProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPurchasedProductsActionPerformed
@@ -162,16 +163,20 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
         setVisible(false);
         ProductReturn productReturn = new ProductReturn();
         productReturn.setVisible(true);
+        productReturn.setParentNode(this);
     }//GEN-LAST:event_returnProductActionPerformed
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         System.out.println("Close window and return to admin role and employee role window");
         employeeRole.logout();
+        setVisible(false);
+        ((JFrame)getParentNode()).setVisible(true);
     }//GEN-LAST:event_logoutActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+
         setVisible(false);
-        ((JFrame)getParentNode()).setVisible(true);        // TODO add your handling code here:
+        ((JFrame)this.getParentNode()).setVisible(true);
     }//GEN-LAST:event_formWindowClosing
 
     /**

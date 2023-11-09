@@ -4,14 +4,16 @@
  */
 package com.lab4.inventoryproject.frontend;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Mashaal
  */
-public class RemoveEmployee extends javax.swing.JFrame {
-
+public class RemoveEmployee extends javax.swing.JFrame implements Node{
+    
+    private Node parent;
     /**
      * Creates new form RemoveEmployee
      */
@@ -33,8 +35,13 @@ public class RemoveEmployee extends javax.swing.JFrame {
         removeTextField = new javax.swing.JTextField();
         removeButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         removeLabel.setBackground(new java.awt.Color(102, 255, 102));
         removeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -90,6 +97,12 @@ public class RemoveEmployee extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_removeButtonActionPerformed
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        setVisible(false);
+        ((JFrame)getParentNode()).setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
+
     /**
      * @param args the command line arguments
      */
@@ -130,4 +143,14 @@ public class RemoveEmployee extends javax.swing.JFrame {
     private javax.swing.JLabel removeLabel;
     private javax.swing.JTextField removeTextField;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void setParentNode(Node node) {
+        this.parent = node;
+    }
+
+    @Override
+    public Node getParentNode() {
+        return parent;
+    }
 }
