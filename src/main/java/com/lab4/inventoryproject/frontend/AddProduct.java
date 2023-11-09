@@ -11,20 +11,20 @@ import javax.swing.JOptionPane;
  *
  * @author Mashaal
  */
-public class AddProduct extends AddWindow implements Node {
+public class AddProduct extends AddWindow1 implements Node {
     private Node parent;
     /**
      * Creates new form AddProduct
      */
     public AddProduct() {
-        super("Product ID","Product Name","Manafacturer Name","Supplier Name","Quantity");
+        super("Product ID","Product Name","Manafacturer Name","Supplier Name","Quantity","Price",0);
         this.setTitle("Add Product");
         initComponents();
     }
     
     @Override
-    protected void button1ActionPerformed(java.awt.event.ActionEvent evt) {
-        super.button1ActionPerformed(evt);
+    protected void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        super.jButton1ActionPerformed(evt);
         boolean numeric = true;
         try {
             Integer num = Integer.parseInt(text5);

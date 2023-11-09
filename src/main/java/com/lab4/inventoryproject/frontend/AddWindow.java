@@ -37,7 +37,7 @@ public class AddWindow extends javax.swing.JFrame implements Node{
      * Creates new form AddWindow
      */
     
-    public AddWindow(String text1, String text2, String text3, String text4, String text5) {
+    public AddWindow(String text1, String text2, String text3, String text4, String text5,int flag) {
         initComponents();
         this.label1.setText(text1);
         this.label2.setText(text2);
@@ -235,7 +235,7 @@ public class AddWindow extends javax.swing.JFrame implements Node{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddWindow("Label1","Label2","Label3","Label4","Label5").setVisible(true);
+                new AddWindow("Label1","Label2","Label3","Label4","Label5",1).setVisible(true);
             }
         });
     }

@@ -10,20 +10,20 @@ import javax.swing.JOptionPane;
  *
  * @author Mashaal
  */
-public class AddEmployee extends AddWindow implements Node {
+public class AddEmployee extends AddWindow1 implements Node {
     /**
      * Creates new form AddEmployee
      */
     private Node parent;
     public AddEmployee() {
-        super("Employee ID","Name","Email","Address","PhoneNumber");
+        super("Employee ID","Name","Email","Address","Phone Number","",1);
         this.setTitle("Add Employee");
         initComponents();
     }
     
     @Override
-    protected void button1ActionPerformed(java.awt.event.ActionEvent evt) {
-        super.button1ActionPerformed(evt);
+    protected void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+        super.jButton1ActionPerformed(evt);
         boolean status = AdminRoleMenu.adminRole.addEmployee(super.text1, super.text2, super.text3, super.text4, super.text5);
         if(status == false){
             JOptionPane.showMessageDialog(null, "The Employee with ID = " + super.text1 + "username already exists!");
