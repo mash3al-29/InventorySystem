@@ -148,6 +148,9 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
 
     private void purchaseProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purchaseProductActionPerformed
         System.out.println("Navigate to purchase product");
+        setVisible(false);
+        ProductPurchase productPurchase = new ProductPurchase();
+        productPurchase.setVisible(true);
     }//GEN-LAST:event_purchaseProductActionPerformed
 
     private void viewPurchasedProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPurchasedProductsActionPerformed
