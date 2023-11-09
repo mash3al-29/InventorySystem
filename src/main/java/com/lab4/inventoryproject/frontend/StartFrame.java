@@ -78,8 +78,8 @@ public class StartFrame extends javax.swing.JFrame implements Node{
     private void adminRoleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminRoleActionPerformed
         System.out.println("Go to Login for Admins");
         setVisible(false);
-        AdminRoleMenu adminRoleMenu = new AdminRoleMenu();
-        adminRoleMenu.setVisible(true);
+        LoginAdmin adminRoleLogin = new LoginAdmin();
+        adminRoleLogin.setVisible(true);
         //adminRoleMenu.setParentNode(this);
        
     }//GEN-LAST:event_adminRoleActionPerformed
