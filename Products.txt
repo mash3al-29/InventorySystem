@@ -3,3 +3,5 @@ SMT-002,Samsung Galaxy S22,Samsung,Amazon,3,1200.0
 GMC-003,PlayStation 5,Sony,GameStop,4,500.0
 SPK-004,Google Nest Audio,Google,Walmart,1,200.0
 WTCH-005,Fitbit Versa 3,Fitbit,Target,2,150.0
+BRM-001,Bromia,Saudi Arabia,Alexendria Uni,0,1.0
+BRM-002,Bromia,Saudi Arabia,Alexanderia Uni,2,0.0

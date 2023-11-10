@@ -19,6 +19,7 @@ public class AddWindow extends javax.swing.JFrame implements Node {
     protected String text3;
     protected String text4;
     protected String text5;
+    protected String text6;
     private Node parent;
 
     /**
@@ -199,7 +200,8 @@ public class AddWindow extends javax.swing.JFrame implements Node {
       text3 = jTextField3.getText();
       text4 = jTextField4.getText();
       text5 = jTextField5.getText();
-      if (text1.isEmpty() || text2.isEmpty() || text3.isEmpty() || text4.isEmpty() || text5.isEmpty()) {
+      text6 = jTextField6.getText();
+      if (text1.isEmpty() || text2.isEmpty() || text3.isEmpty() || text4.isEmpty() || text5.isEmpty() || text6.isEmpty()) {
           JOptionPane.showMessageDialog(null, "Some Fields are Empty");
       }
     }//GEN-LAST:event_jButton1ActionPerformed

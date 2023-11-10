@@ -24,17 +24,31 @@ public class AddProduct extends AddWindow {
     @Override
     protected void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         super.jButton1ActionPerformed(evt);
-        boolean numeric = true;
+        boolean numericQuantity = true;
+        int quantity = 0;
         try {
-            Integer num = Integer.parseInt(text5);
+            quantity = Integer.parseInt(text5);
         } catch (NumberFormatException e) {
-            numeric = false;
+            numericQuantity = false;
         }
-        if(numeric == false){
+        if(numericQuantity == false){
             JOptionPane.showMessageDialog(null, "You should enter a numeric value with the field whose name is Quantity");
+            return;
+        }
+        
+        boolean numericPrice = true;
+        int price = 0;
+        try {
+            price = Integer.parseInt(text6);
+        } catch (NumberFormatException e) {
+            numericPrice = false;
+        }
+        if(numericPrice == false){
+            JOptionPane.showMessageDialog(null, "You should enter a numeric value with the field whose name is Price");
+            return;
         }
         //check here for 1 as price
-         boolean status = EmployeeRoleMenu.employeeRole.addProduct(super.text1, super.text2, super.text3, super.text4, Integer.parseInt(super.text5),1);
+         boolean status = EmployeeRoleMenu.employeeRole.addProduct(super.text1, super.text2, super.text3, super.text4, quantity, price);
         if(status == false){
             JOptionPane.showMessageDialog(null, "The Product with ID = " + super.text1 + " already exists!");
         }else{
