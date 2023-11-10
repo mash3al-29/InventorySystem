@@ -20,7 +20,6 @@ com\lab4\inventoryproject\backend\CustomerProduct.class
 com\lab4\inventoryproject\frontend\LoginAdmin.class
 com\lab4\inventoryproject\frontend\ProductPurchase.class
 com\lab4\inventoryproject\frontend\ProductWindow$3.class
-com\lab4\inventoryproject\frontend\AddWindow1$1.class
 com\lab4\inventoryproject\frontend\ProductPurchase$2.class
 com\lab4\inventoryproject\frontend\EmployeeRoleMenu$6.class
 com\lab4\inventoryproject\frontend\ViewWindow$1.class
@@ -38,7 +37,6 @@ com\lab4\inventoryproject\constants\LoginCredentials.class
 com\lab4\inventoryproject\frontend\AddWindow$1.class
 com\lab4\inventoryproject\frontend\AdminRoleMenu$4.class
 com\lab4\inventoryproject\frontend\StartFrame$2.class
-com\lab4\inventoryproject\frontend\AddWindow1$2.class
 com\lab4\inventoryproject\backend\CustomerProductDatabase.class
 com\lab4\inventoryproject\backend\Record.class
 com\lab4\inventoryproject\frontend\ProductPurchase$1.class
@@ -56,8 +54,6 @@ com\lab4\inventoryproject\frontend\ProductWindow$5.class
 com\lab4\inventoryproject\frontend\ViewWindow.class
 com\lab4\inventoryproject\frontend\StartFrame$1.class
 com\lab4\inventoryproject\frontend\AdminRoleMenu$3.class
-com\lab4\inventoryproject\frontend\AddWindow1$3.class
-com\lab4\inventoryproject\frontend\AddWindow1.class
 com\lab4\inventoryproject\frontend\ViewProducts$1.class
 com\lab4\inventoryproject\frontend\AddProduct$2.class
 com\lab4\inventoryproject\frontend\EmployeeRoleMenu$4.class
@@ -81,6 +77,7 @@ com\lab4\inventoryproject\frontend\ProductWindow$2.class
 com\lab4\inventoryproject\constants\FileNames.class
 com\lab4\inventoryproject\frontend\ProductWindow.class
 com\lab4\inventoryproject\frontend\ProductReturn$1.class
+com\lab4\inventoryproject\frontend\AddWindow$3.class
 com\lab4\inventoryproject\frontend\AdminRoleMenu$2.class
 com\lab4\inventoryproject\frontend\LoginEmployee.class
 com\lab4\inventoryproject\frontend\ProductReturn.class

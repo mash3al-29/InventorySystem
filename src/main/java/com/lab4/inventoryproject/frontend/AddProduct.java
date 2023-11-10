@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author Mashaal
  */
-public class AddProduct extends AddWindow1 {
+public class AddProduct extends AddWindow {
     /**
      * Creates new form AddProduct
      */
