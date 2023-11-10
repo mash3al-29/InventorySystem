@@ -40,11 +40,6 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Admin Role");
         setResizable(false);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
 
         addEmployee.setBackground(new java.awt.Color(0, 0, 0));
         addEmployee.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,12 +140,6 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
         removeEmployee.setParentNode(this);
                 
     }//GEN-LAST:event_removeButtonActionPerformed
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        // TODO add your handling code here:
-        setVisible(false);
-        ((JFrame) getParentNode()).setVisible(true);
-    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

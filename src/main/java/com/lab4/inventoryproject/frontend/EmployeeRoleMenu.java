@@ -19,6 +19,7 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
      */
     public EmployeeRoleMenu() {
         initComponents();
+        this.setTitle("Employee Role Menu");
     }
     
 
@@ -34,11 +35,7 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
         logout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
+        setResizable(false);
 
         addProduct.setBackground(new java.awt.Color(0, 0, 0));
         addProduct.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,12 +174,6 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
         setVisible(false);
         ((JFrame)getParentNode()).setVisible(true);
     }//GEN-LAST:event_logoutActionPerformed
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-
-        setVisible(false);
-        ((JFrame)this.getParentNode()).setVisible(true);
-    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

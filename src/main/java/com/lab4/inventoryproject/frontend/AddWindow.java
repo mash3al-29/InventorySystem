@@ -20,12 +20,14 @@ public class AddWindow extends javax.swing.JFrame implements Node {
     protected String text4;
     protected String text5;
     protected String text6;
+    int flag = 1;
     private Node parent;
 
     /**
      * Creates new form AddWindow1
      */
     public AddWindow(String text1, String text2, String text3, String text4, String text5,String text6,int flag) {
+        this.flag = flag;
         initComponents();
         this.jLabel1.setText(text1);
         this.jLabel2.setText(text2);
@@ -66,6 +68,7 @@ public class AddWindow extends javax.swing.JFrame implements Node {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
@@ -201,8 +204,14 @@ public class AddWindow extends javax.swing.JFrame implements Node {
       text4 = jTextField4.getText();
       text5 = jTextField5.getText();
       text6 = jTextField6.getText();
-      if (text1.isEmpty() || text2.isEmpty() || text3.isEmpty() || text4.isEmpty() || text5.isEmpty() || text6.isEmpty()) {
-          JOptionPane.showMessageDialog(null, "Some Fields are Empty");
+      if(flag == 0){
+          if (text1.isEmpty() || text2.isEmpty() || text3.isEmpty() || text4.isEmpty() || text5.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Some Fields are Empty");
+        }
+      }else{
+          if (text1.isEmpty() || text2.isEmpty() || text3.isEmpty() || text4.isEmpty() || text5.isEmpty() && text6.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Some Fields are Empty");
+        }
       }
     }//GEN-LAST:event_jButton1ActionPerformed
 
