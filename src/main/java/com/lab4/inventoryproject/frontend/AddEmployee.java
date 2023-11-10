@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.lab4.inventoryproject.frontend;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -10,24 +11,24 @@ import javax.swing.JOptionPane;
  *
  * @author Mashaal
  */
-public class AddEmployee extends AddWindow1 implements Node {
+public class AddEmployee extends AddWindow1 {
+
     /**
      * Creates new form AddEmployee
      */
-    private Node parent;
     public AddEmployee() {
-        super("Employee ID","Name","Email","Address","Phone Number","",1);
+        super("Employee ID", "Name", "Email", "Address", "Phone Number", "", 1);
         this.setTitle("Add Employee");
         initComponents();
     }
-    
+
     @Override
     protected void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         super.jButton1ActionPerformed(evt);
         boolean status = AdminRoleMenu.adminRole.addEmployee(super.text1, super.text2, super.text3, super.text4, super.text5);
-        if(status == false){
+        if (status == false) {
             JOptionPane.showMessageDialog(null, "The Employee with ID = " + super.text1 + "username already exists!");
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "The Employee with ID = " + super.text1 + "has been successfully added.");
             // pop when press close
         }
@@ -42,12 +43,8 @@ public class AddEmployee extends AddWindow1 implements Node {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Add Employee");
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,12 +59,6 @@ public class AddEmployee extends AddWindow1 implements Node {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-
-         setVisible(false);
-        ((JFrame)getParentNode()).setVisible(true);
-    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -102,20 +93,8 @@ public class AddEmployee extends AddWindow1 implements Node {
                 new AddEmployee().setVisible(true);
             }
         });
-    }
-    
-    
-
-    @Override
-    public void setParentNode(Node node) {
-        this.parent = node;
-    }
-
-    @Override
-    public Node getParentNode() {
-        return parent;
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
+}
 }

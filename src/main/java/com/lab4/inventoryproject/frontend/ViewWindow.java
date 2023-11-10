@@ -4,14 +4,16 @@
  */
 package com.lab4.inventoryproject.frontend;
 
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Mashaal
  */
-public class ViewWindow extends javax.swing.JFrame {
+public class ViewWindow extends javax.swing.JFrame implements Node{
     private final String[] columnsNames;
+    private Node parent;
     /**
      * Creates new form ViewWindow
      */
@@ -47,8 +49,13 @@ public class ViewWindow extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -78,6 +85,12 @@ public class ViewWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        setVisible(false);
+        ((JFrame)parent).setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -118,4 +131,14 @@ public class ViewWindow extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void setParentNode(Node node) {
+        parent = node;
+    }
+
+    @Override
+    public Node getParentNode() {
+        return parent;
+    }
 }

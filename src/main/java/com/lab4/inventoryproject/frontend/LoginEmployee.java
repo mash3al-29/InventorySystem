@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author omara
  */
-public class LoginEmployee extends LoginWindow {
+public class LoginEmployee extends LoginWindow{
 
     /**
      * Creates new form LoginEmployee

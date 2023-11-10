@@ -144,6 +144,7 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
         setVisible(false);
         ViewProducts viewProducts = new ViewProducts();
         viewProducts.setVisible(true);
+        viewProducts.setParentNode(this);
     }//GEN-LAST:event_viewProductsActionPerformed
 
     private void purchaseProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purchaseProductActionPerformed
@@ -156,6 +157,10 @@ public class EmployeeRoleMenu extends javax.swing.JFrame implements Node {
 
     private void viewPurchasedProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewPurchasedProductsActionPerformed
         System.out.println("Navigate to view purcahsed products");
+        setVisible(false);
+        ViewPurchasedProducts   viewPurchasedProducts= new ViewPurchasedProducts();
+        viewPurchasedProducts.setVisible(true);
+        viewPurchasedProducts.setParentNode(this);
     }//GEN-LAST:event_viewPurchasedProductsActionPerformed
 
     private void returnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnProductActionPerformed

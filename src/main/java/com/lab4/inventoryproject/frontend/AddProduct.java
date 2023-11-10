@@ -11,8 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author Mashaal
  */
-public class AddProduct extends AddWindow1 implements Node {
-    private Node parent;
+public class AddProduct extends AddWindow1 {
     /**
      * Creates new form AddProduct
      */
@@ -115,15 +114,6 @@ public class AddProduct extends AddWindow1 implements Node {
         });
     }
 
-    @Override
-    public void setParentNode(Node node) {
-        this.parent = node;
-    }
-
-    @Override
-    public Node getParentNode() {
-        return parent;
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

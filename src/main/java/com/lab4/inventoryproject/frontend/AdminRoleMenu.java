@@ -118,8 +118,8 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
         System.out.println("Navigate to Add Employee Window");
         AddEmployee addEmployee = new AddEmployee();
         addEmployee.setParentNode(this);
-        setVisible(false);
         addEmployee.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_addEmployeeActionPerformed
 
     private void logOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutActionPerformed
@@ -134,6 +134,7 @@ public class AdminRoleMenu extends javax.swing.JFrame implements Node {
         setVisible(false);
         ViewEmployees viewEmployees = new ViewEmployees();
         viewEmployees.setVisible(true);
+        viewEmployees.setParentNode(this);
     }//GEN-LAST:event_viewEmployeesActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
