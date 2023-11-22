@@ -37,9 +37,9 @@ public class AddProduct extends AddWindow {
         }
         
         boolean numericPrice = true;
-        int price = 0;
+        float price = 0;
         try {
-            price = Integer.parseInt(text6);
+            price = Float.parseFloat(text6);
         } catch (NumberFormatException e) {
             numericPrice = false;
         }

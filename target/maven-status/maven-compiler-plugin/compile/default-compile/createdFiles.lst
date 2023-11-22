@@ -65,9 +65,7 @@ com\lab4\inventoryproject\frontend\AddWindow$2.class
 com\lab4\inventoryproject\frontend\LoginWindow$3.class
 com\lab4\inventoryproject\frontend\LoginWindow$6.class
 com\lab4\inventoryproject\frontend\ViewProducts.class
-com\lab4\inventoryproject\frontend\AdminRoleMenu$6.class
 com\lab4\inventoryproject\frontend\RemoveEmployee.class
-com\lab4\inventoryproject\frontend\EmployeeRoleMenu$8.class
 com\lab4\inventoryproject\frontend\ViewWindow$2.class
 com\lab4\inventoryproject\frontend\ProductWindow$6.class
 com\lab4\inventoryproject\frontend\Node.class
